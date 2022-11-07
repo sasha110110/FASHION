@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+        <html lang="en">
+            <head>
+        <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		
+		<!-- <link rel="stylesheet" type="text/css" media="all" href="../static/css/tabstyle.css"> -->
+		
+       
+ 
+
+ 
+</head>
+<body>
+ 
+  <style> body {background-image: url('/static/images/wool.PNG'); </style>
+  
+  <h1 align="center">Фэшн лук</h1>
+ 
+    <form action="" method="post" novalidate align="center">
+       {{ form.hidden_tag() }}
+ 
+     
+	 
+	
+    
+     <p>
+          {{form.colour.label}}
+          {{form.colour(size=32)}}
+ 
+           {% for error in form.colour.errors %}
+          <span style="color:red;">
+ 
+              {{error}}
+          </span>
+          {% endfor %}
+       </p>
+ 
+ 
+         <p>
+ 
+          {{form.style.label}}
+          {{form.style}}
+ 
+ 
+            {% for error in form.style.errors %}
+          <span style="color:red;">
+ 
+              {{error}}
+          </span>
+          {% endfor %}
+ 
+          </p>
+        
+		 
+        <p>
+            <input type="submit" value="Подобрать лук" class="btn btn-success">
+ 
+        </p>
+		 </form>
+ <div align="center">
+ {% if result_colours %}
+    <div>
+        {{ result_colours | safe }}
+    </div>
+{% endif %}
+ 
+ {% if result_style %}
+    <div>
+        {{ result_style | safe }}
+    </div>
+{% endif %}
+  </div>
+ 
+ </body>
+   </html>
