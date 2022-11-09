@@ -56,7 +56,7 @@ def display():
     result_style=None
     if form.validate_on_submit():
         if form.colour.data in COLORS.keys():
-           result_colours=COLORS[form.colour.data]
+           result_colours=COLORS[form.colour.data.lower()]
         else:
             result_colours="Все оттенки черного и белого - цвета-универсалы."
 
