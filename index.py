@@ -66,6 +66,3 @@ def display():
     return render_template('index.html', form=form, result_colours=result_colours, result_style=result_style)
 
 
-app.run('0.0.0.0', os.environ.get('PORT', 5000))
-
-
