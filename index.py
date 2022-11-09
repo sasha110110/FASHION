@@ -36,7 +36,7 @@ STYLES=defaultdict(list)
 for items in STY:
     STYLES[items[0]].append(items[1:])
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder="./static")
 app.config['SECRET_KEY'] = 'kek'
 
 
