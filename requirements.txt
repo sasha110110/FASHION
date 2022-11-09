@@ -1,2 +1,2 @@
-flask
-flask-wtf
+Flask==2.2.2
+Flask-WTF==1.0.1
