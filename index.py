@@ -58,7 +58,7 @@ def display():
         if form.colour.data in COLORS.keys():
            result_colours=COLORS[form.colour.data.lower()]
         else:
-            result_colours="Все оттенки черного и белого - цвета-универсалы."
+            result_colours=["черный", "белый", "пастельная гамма"]
 
         result_style=STYLES[form.style.data]
 
