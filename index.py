@@ -36,16 +36,16 @@ STYLES=defaultdict(list)
 for items in STY:
     STYLES[items[0]].append(items[1:])
 
-app = Flask(__name__, static_url_path='', static_folder="./static")
+app = Flask(__name__)
 app.config['SECRET_KEY'] = 'kek'
 
 
 
 class MyForm(FlaskForm):
-    colour = StringField('Цвет предмета одежды', validators=[InputRequired()])
+    colour = StringField('Цвет предмета одежды', validators=[InputRequired("Пожалуйста, введите какой-нибудь цвет")])
     style=RadioField('Стиль',
                        choices=['классический', 'романтический', 'спортивный', "повседневный"],
-                       validators=[InputRequired()])
+                       validators=[InputRequired("Пожалуйста, выберите какой-нибудь стиль")])
     submit = SubmitField('Предложить наряд')
 
 
