@@ -17,6 +17,7 @@
 <body>
  
   <style> body {background-image: url('/static/images/wool.PNG'); </style>
+ <p><font size="24"></font>
   
   <h1 align="center">Фэшн лук</h1>
  
@@ -61,19 +62,23 @@
  
         </p>
 		 </form>
- <div align="center">
+
  {% if result_colours %}
-    <div>
-        {{ result_colours | safe }}
+   <div align="center">
+     {% for colour in result_colours %}
+     <li>{{ colour }}</li>
+    {% endfor %}
+   {% endif %}
     </div>
-{% endif %}
+
  
  {% if result_style %}
-    <div>
-        {{ result_style | safe }}
+   <div align="center">
+     {% for item in result_style %}
+     <li>{{ item }}</li>
+    {% endfor %}
+   {% endif %}
     </div>
-{% endif %}
-  </div>
- 
+ </p>
  </body>
    </html>
